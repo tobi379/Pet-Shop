@@ -360,3 +360,8 @@ input[type="radio"] {
 .remove {
     display: none;
 }
+
+.unidades {
+    font-size: 2rem;
+    text-decoration: underline;
+}

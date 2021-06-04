@@ -46,6 +46,21 @@ function pintar (array) {
         <p class="producto__precio">Precio: $${item.precio}</p>
         <button id = "button" class = "boton boton--primario">Agregar al Carrito</button>`
 
+        if (item.stock <= 5) {
+            img.src = item.imagen
+            info.innerHTML = `<p class="producto__nombre">${item.nombre}</p>
+            <p class="producto__descripcion descripcion"><span class="underline">Detalles:</span> ${item.descripcion}</p>
+            <p class="producto__precio">Precio: $${item.precio}</p>
+            <button id = "button" class = "boton boton--primario">Agregar al Carrito</button>
+            <p class = "unidades">Ultimas Unidades!</p>`
+        } else {
+            img.src = item.imagen
+            info.innerHTML = `<p class="producto__nombre">${item.nombre}</p>
+            <p class="producto__descripcion descripcion"><span class="underline">Detalles:</span> ${item.descripcion}</p>
+            <p class="producto__precio">Precio: $${item.precio}</p>
+            <button id = "button" class = "boton boton--primario">Agregar al Carrito</button>`
+        }
+
         padre.appendChild(producto)
         producto.appendChild(img)
         producto.appendChild(info)
