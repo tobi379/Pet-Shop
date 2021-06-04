@@ -1,0 +1,362 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+#wrapp {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+/* GLOBAL */
+p {
+    font-size: 1.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1, h2, h3, h4 {
+    text-align: center;
+    /* color: var(--secundario); */
+    font-family: 'Staatliches', cursive;
+}
+
+h1 {
+    color: black;
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3.2rem;
+}
+
+h3 {
+   font-size: 2.4rem; 
+}
+
+h4 {
+    font-size: 2rem;
+}
+
+img {
+    width: 100%;
+}
+
+.contenedor {
+    max-width: 120rem;
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 2rem;
+    margin-bottom: 5rem;
+}
+
+/*¨HEADER */
+
+.header {
+    height: 35rem;
+    width: 100%;
+    background-color: #F9512C;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+}
+
+.header__img {
+    position: relative;
+    left: 60px;
+    width: 15rem;
+    height: 12rem;
+    border-radius: 5rem;
+    margin-top: 3rem;
+}
+
+.header__logo {
+    padding-bottom: 3rem;
+}
+
+/* MAIN */
+
+.main {
+    margin-top: 3rem;
+}
+
+.main__img {
+    height: 50rem;
+}
+
+.main__contenido {
+    max-width: 120rem;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.main__contenido h2, h3, p {
+    margin-bottom: 5rem;
+    text-align: center;
+}
+
+.main__pagos,
+.main__opiniones {
+    margin-bottom: 5rem;
+}
+
+.main__pagos__img {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.main__pagos__img img {
+    width: 33.3%;
+}
+
+/* Estrellas */
+
+#form {
+    width: 250px;
+    margin: 0 auto;
+    height: 50px;
+}
+  
+#form p {
+    text-align: center;
+}
+  
+#form label {
+    font-size: 20px;
+}
+  
+input[type="radio"] {
+    display: none;
+}
+  
+.clasificacion label {
+    color: orange;
+}
+
+/* Footer */
+.footer {
+    background-color: beige;
+    min-height: 30rem;
+    display: flex;
+    flex-direction: column;
+    padding: 4rem;
+}
+
+.footer__nav,
+.footer__map {
+    margin-bottom: 2rem;
+}
+
+.footer__nav a {
+    color: black;
+    margin-right: 2rem;
+}
+
+@media (min-width: 768px) {
+    .footer {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .footer__nav {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer__nav h4, a {
+        margin-bottom: 3rem;
+    }
+}
+
+/* Contacto */
+
+.centrar-texto {
+    margin-top: 5rem;
+    text-align: center;
+}
+
+.contacto-bg {
+    background-image: url(../img/pic_banner01.png);
+    height: 40rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.formulario {
+    background-color: white;
+    margin: -5rem auto 0 auto;
+    width: 95%;
+    padding: 5rem;
+}
+
+.campo {
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.campo__label {
+    flex: 0 0 9rem;
+    text-align: right;
+    padding-right: 2rem;
+}
+
+.campo__field {
+    flex: 1;
+    border: 1px solid black;
+}
+
+.campo__field--textarea {
+    height: 20rem;
+}
+
+.boton {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 1rem 3rem;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    border: none;
+}
+
+@media (min-width: 768px) {
+    .boton {
+        display: inline-block;
+    }
+}
+
+.boton:hover {
+    cursor: pointer;
+}
+
+.boton--primario {
+    background-color: black;
+}
+
+.boton--secundario {
+    background-color: #784d3c;
+}
+
+/* Jueguetería */
+#grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    #grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Producutos */
+.producto {
+    margin-top: 3rem;
+    background-color: #F9512C;
+    padding: 1rem;
+}
+
+.producto__informacion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.producto__nombre,
+.producto__descripcion {
+    font-size: 2rem;
+}
+
+.producto__precio {
+    font-size: 2rem;
+    color: #2CCEF9;
+}
+
+.producto__nombre,
+.producto__precio,
+.producto__descripcion {
+    font-family: 'Staatliches', cursive;
+    margin: 1rem 0;
+    line-height: 1.2;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.descripcion {
+   height: 2.5rem;
+   overflow: hidden;
+   transition: height .3s ease-in .3s;
+   cursor: pointer;
+}
+
+.descripcion:hover {
+    height: 25rem;
+}
+
+.color {
+    background-color: #F9512C;
+}
+
+/* CARRITO */
+
+.carrito {
+    min-height: 80vh;
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.table__productos {
+    display: flex;
+}
+
+.table__productos img {
+    width: 9rem;
+    object-fit: contain;
+    border-radius: 6px;
+    margin-right: 20px;
+}
+
+.table__cantidad input {
+    width: 40px;
+    border: none;
+    outline: 0;
+    font-size: 16px;
+    font-weight: 700;
+    margin-right: 30px;
+    margin-bottom: 20px;
+}
+
+.alert {
+    z-index: 100;
+}
+
+.hide,
+.remove {
+    display: none;
+}
