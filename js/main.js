@@ -187,3 +187,10 @@ window.onload = function() {
         renderCarrito()
     }
 }
+
+
+// Mensaje de contacto
+let contacto = document.querySelector("#liveToastBtn")
+contacto.addEventListener('click', () => {
+    alert("Mensaje Enviado!")
+})
