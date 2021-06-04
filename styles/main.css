@@ -132,9 +132,9 @@ img {
 /* Estrellas */
 
 #form {
-    width: 250px;
+    width: 25rem;
     margin: 0 auto;
-    height: 50px;
+    height: 5rem;
 }
   
 #form p {
@@ -142,7 +142,7 @@ img {
 }
   
 #form label {
-    font-size: 20px;
+    font-size: 2rem;
 }
   
 input[type="radio"] {

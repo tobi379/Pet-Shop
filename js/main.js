@@ -148,9 +148,10 @@ function deleteItem(e) {
         }
     }
     x.remove()
+    // localStorage.removeItem('carrito', JSON.stringify(carrito))
 
+    // Alerta de producto removido!
     const alert = document.querySelector(".remove")
-
     setTimeout( function() {
         alert.classList.add("remove")
     }, 2000)
