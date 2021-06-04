@@ -1,7 +1,7 @@
 # Pet-Shop
-Tienda online
+Tienda online - MindHub Project
 
-Link : 
+Link : https://tobi379.github.io/Pet-Shop/
 
 Por hacer: 
 
