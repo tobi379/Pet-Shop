@@ -53,10 +53,12 @@ function pintar (array) {
 }
 
 function addCarrito () {
+    // Click en boton "Agregar al carrito"
     const button = document.querySelectorAll("#button")
     button.forEach (btn => {
         btn.addEventListener('click', (e) => {
             const button = e.target
+            // Que sea al boton mas cercano
             const item = button.closest(".producto")
             // console.log(item)
             const itemTitle = item.querySelector(".producto__nombre").textContent
@@ -65,11 +67,13 @@ function addCarrito () {
             // console.log(itemPrice)
             const itemImg = item.querySelector(".producto__imagen").src
             // console.log(itemImg)
+            // Creo objeto para pushear al carrito
             const newCarrito = {
                 title: itemTitle,
                 precio: itemPrice,
                 img: itemImg,
-                cantidad: 1
+                cantidad: 1,
+                id : 1
             }
             addItem(newCarrito)
         })
@@ -78,6 +82,7 @@ function addCarrito () {
 
 function addItem (item) {
 
+    // Mensaje de se añadio item al carrito
     const alert = document.querySelector(".alert")
 
     setTimeout( function() {
@@ -87,15 +92,17 @@ function addItem (item) {
 
     const input = tbody.getElementsByClassName("input__element")
 
+    // Si se repeite un item se suma la cantidad, no se duplica
     for (let i = 0; i < carrito.length; i++) {
+        // trim() para eliminar los espacios en blanco
         if (carrito[i].title.trim() === item.title.trim()) {
             carrito[i].cantidad++
             const valueInput = input[i]
             valueInput.value++
-            // CarritoTotal()
             return null
         }
     }
+    // Les doy un id distinto para despues poder identificarlos
     carrito.push(item)
     renderCarrito()
 }
@@ -109,9 +116,9 @@ function renderCarrito () {
 
         tr.classList.add("itemCarrito")
 
-        const content = `
-        <th scope = "row">1</th>
-        <td class = "table__productos">
+        const content = 
+        // <th scope = "row">${item.id}</th>
+        `<td class = "table__productos">
             <img src = ${item.img} alt = "">
             <h6 class = "title">${item.title}</h6>
         </td>
@@ -127,24 +134,14 @@ function renderCarrito () {
         // Eliminar del carrito al tocar el boton delete
         tr.querySelector(".delete").addEventListener('click', deleteItem)
     })
-    // CarritoTotal()
     addLocalStorage()
 }
-
-// function CarritoTotal(){ // AYUDA!!
-//     let total = 0;
-//     const itemCartTotal = document.querySelector('.itemCartTotal')
-//     carrito.forEach((item) => {
-//       total = total + item.precio * item.cantidad
-//     })
-  
-//     itemCartTotal.innerHTML = `Total $${total}`
-//   }
 
 function deleteItem(e) {
     const deleteCart = e.target
     const x = deleteCart.closest(".itemCarrito")
     const title = x.querySelector(".title").textContent
+    // Cambio el contenido del array
     for(let i=0; i < carrito.length; i++) {
         if (carrito[i].title.trim() === title) {
             carrito.splice(i, 1)
